@@ -6,7 +6,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
 <head>
     <meta charset="UTF-8">
-    <title>Project City-County Merger</title>
+    <title>Calculate Geographic Around Method</title>
 
     <meta name="author" content="Junhao Kong">
 
@@ -16,7 +16,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
-    <link rel="canonical" href="http://JHKong.com/2022/07/11/City-County Merger/">
+    <link rel="canonical" href="http://JHKong.com/2022/07/12/Calculate-Geographic-Around-Method/">
 
     
         <link rel="alternate" href="/atom.xml" type="application/atom+xml">
@@ -113,46 +113,33 @@
         <div>
     <article class="hentry" role="article">
         <header>
-            <h1 class="entry-title">Project City-County Merger</h1>
+            <h1 class="entry-title">Calculate Geographic Around Method</h1>
             <p class="meta">
-                <time datetime="2022-07-11T01:31:14.000Z" data-updated="true">Mon Jul 11 2022</time>
+                <time datetime="2022-07-12T14:28:29.000Z" data-updated="true">Tue Jul 12 2022</time>
             </p>
         </header>
         <div class="entry-content">
-            <p>I start this blog to document my recent work for the environmental economy project City-County Merger.</p>
-<p>At the very first, your can download the datasets and codes that I used to replicate my results.</p>
-<p><a href="/download/CCM.rar">click to download</a></p>
-<h2 id="Recent-results-for-the-project-of-City-County-Merger"><a href="#Recent-results-for-the-project-of-City-County-Merger" class="headerlink" title="Recent results for the project of City-County Merger"></a>Recent results for the project of City-County Merger</h2><h3 id="Firm-Level"><a href="#Firm-Level" class="headerlink" title="Firm Level"></a>Firm Level</h3><p>You can replicate this part using the firm level code in the zipfile.</p>
-<h4 id="Main-Regression"><a href="#Main-Regression" class="headerlink" title="Main Regression"></a>Main Regression</h4><p>Below is the main regression result:</p>
-<p><img src="/images/Main.png" alt="pic"></p>
-<p>We can see that in the firm level, there is a negative relation between reform and pollution emission.</p>
-<h4 id="Event-Study"><a href="#Event-Study" class="headerlink" title="Event Study"></a>Event Study</h4><p>The picture below depicts how the reform’s effect varies before the reform year and after the reform year.</p>
-<p><img src="/images/Eventstudy.png" alt="pic"></p>
-<h3 id="County-Level"><a href="#County-Level" class="headerlink" title="County Level"></a>County Level</h3><p>Due to the pollution dataset’s quality problem, we decided to use the county-level pollution emission<br>to study the effect of the reform. You can replicate this part using the select_control code in the<br>zipfile.</p>
-<h4 id="County-Level-1-—-Use-firm-level-pollution-to-get-the-county-level-aggregate-pollution"><a href="#County-Level-1-—-Use-firm-level-pollution-to-get-the-county-level-aggregate-pollution" class="headerlink" title="County-Level 1 — Use firm level pollution to get the county level aggregate pollution."></a>County-Level 1 — Use firm level pollution to get the county level aggregate pollution.</h4><p>We are still working on this.</p>
-<h4 id="County-Level-2-—-Use-the-satellite-data-PM25-to-proxy-the-county-level-pollution-level"><a href="#County-Level-2-—-Use-the-satellite-data-PM25-to-proxy-the-county-level-pollution-level" class="headerlink" title="County-Level 2 — Use the satellite data PM25 to proxy the county level pollution level."></a>County-Level 2 — Use the satellite data PM25 to proxy the county level pollution level.</h4><h5 id="Main-Regression-1"><a href="#Main-Regression-1" class="headerlink" title="Main Regression"></a>Main Regression</h5><p>Below is the main regression result in county level:</p>
-<p><img src="/images/Main1.png" alt="pic"></p>
-<h5 id="Latest-tool-to-implement-stagger-DID-fect-Yiqing-Xu"><a href="#Latest-tool-to-implement-stagger-DID-fect-Yiqing-Xu" class="headerlink" title="Latest tool to implement stagger DID, fect(Yiqing Xu)"></a>Latest tool to implement stagger DID, fect(Yiqing Xu)</h5><h6 id="Use-method-“ife”"><a href="#Use-method-“ife”" class="headerlink" title="Use method “ife”:"></a>Use method “ife”:</h6><p>fect pm25_per_light,treat(reform) unit(dist_code) time(year) method(“ife”)</p>
-<p><img src="/images/Figure_Main.png" alt="pic"></p>
-<h6 id="placebo-test"><a href="#placebo-test" class="headerlink" title="placebo test"></a>placebo test</h6><p>fect pm25_per_light, treat(reform) unit(dist_code) time(year) method(“ife”) se r(2) placeboTest</p>
-<p><img src="/images/placebo.png" alt="pic"></p>
-<h6 id="wald-test"><a href="#wald-test" class="headerlink" title="wald test"></a>wald test</h6><p>fect pm25_per_light, treat(reform) unit(dist_code) time(year) method(“ife”) se r(2) preperiod(-14) offperiod(5) wald nboots(100)</p>
-<p><img src="/images/WaldTest.png" alt="pic"></p>
-<h6 id="equitest"><a href="#equitest" class="headerlink" title="equitest"></a>equitest</h6><p>fect pm25_per_light, treat(reform) unit(dist_code) time(year) method(“ife”) se r(2) preperiod(-14) offperiod(5) equiTest</p>
-<p><img src="/images/equiv.png" alt="pic"></p>
-<p>For what the tests above mean, please refer <a target="_blank" rel="noopener" href="https://yiqingxu.org/packages/fect/stata/fect_md.html">Yiqing Xu</a></p>
+            <p>I derived a quick method to calculate the number of points around one specific point in Matlab code.</p>
+<p>Sometimes we want to know how many subway stations or hosipital around one specific point which is defined with latitude and longitutde.<br>I derived a method to fully utilize the Matlab’s matrix features which replace circles of some radius with a rectangle.</p>
+<p>For example, traditionally we do this use the process below:</p>
+<p><img src="/images/circles.jpg" alt="pic"></p>
+<p>My method proceed like this:</p>
+<p><img src="/images/recrangle.png" alt="pic"></p>
+<p>The tradeoff of my method is not traditionally “circle” neighbor area, but this kind of form makes the calculation improve a lot.</p>
+<p>The intuition here is that I do not calculate points number in the circle area but a recrangle area. You can just compare the latitude and longitude respectively to<br>confirm that whether in both direction the distance is short that the determined “radius”, and all you need to do is keeping points that satisfy the requrement above,<br>count how many observations there are.</p>
+<p>I provide a template code here for you to impletment this method.<br><a href="/download/qkm.m">code</a><br><a href="/download/sample.mat">dataset</a></p>
 
         </div>
         <footer>
             <p class="meta">
                 <span class="byline author vcard">Posted by <span class="fn">Junhao Kong</span></span>
-                <time datetime="2022-07-11T01:31:14.000Z" data-updated="true">Mon Jul 11 2022</time>
+                <time datetime="2022-07-12T14:28:29.000Z" data-updated="true">Tue Jul 12 2022</time>
                 
             </p>
             <div class="sharing">
     
         <a class="twitter-share-button"
-           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Project%20City-County%20Merger">
+           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Calculate%20Geographic%20Around%20Method">
             Tweet
         </a>
     
@@ -160,9 +147,9 @@
 
             <p class="meta">
                 
-                <a class="basic-alignment left" href="/" title="Previous Post: Spatial Structural Model">« Spatial Structural Model</a>
-                
 
+                
+                <a class="basic-alignment right" href="/" title="Previous Post: soe-vs-nonsoe">soe-vs-nonsoe »</a>
                 
             </p>
         </footer>
