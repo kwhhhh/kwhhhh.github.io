@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" lang="zh-CN"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8" lang="zh-CN"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>Project City-County Merger</title>
+
+    <meta name="author" content="Junhao Kong">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+    <link rel="canonical" href="http://JHKong.com/2022/07/11/City-County Merger/">
+
+    
+        <link rel="alternate" href="/atom.xml" type="application/atom+xml">
+    
+
+    
+
+    
+<script src="/js/modernizr-2.0.js"></script>
+
+
+    
+<script src="/js/jquery-1.9.1.js"></script>
+
+
+    
+    <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
+
+    
+    <link rel="me" href="https://twitter.com/your_twitter">
+    
+
+
+
+    
+<script src="/js/octo.js"></script>
+
+
+    
+<link rel="stylesheet" href="/css/octo.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+
+<header role="banner">
+    <hgroup>
+        <h1><a href="/">Junhao Kong</a></h1>
+        
+    </hgroup>
+</header>
+
+<nav role="navigation">
+    
+        <ul class="subscription" data-subscription="rss">
+            <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+        </ul>
+    
+
+    <form action="https://google.com/search" method="get">
+        <fieldset role="search">
+            <input type="hidden" name="q" value="site:http://jhkong.com/">
+            <input class="search" type="text" name="q" results="0" placeholder="Search">
+        </fieldset>
+    </form>
+
+    <ul class="main-navigation">
+        
+            <li><a href="/">Home</a></li>
+        
+            <li><a href="/archives">Archives</a></li>
+        
+            <li><a href="/">Blog</a></li>
+        
+    </ul>
+</nav>
+
+
+<div id="main">
+    <div id="content">
+        <div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title">Project City-County Merger</h1>
+            <p class="meta">
+                <time datetime="2022-07-11T01:31:14.000Z" data-updated="true">Mon Jul 11 2022</time>
+            </p>
+        </header>
+        <div class="entry-content">
+            <p>I start this blog to document my recent work for the environmental economy project City-County Merger.</p>
+<p>At the very first, your can download the datasets and codes that I used to replicate my results.</p>
+<p><a href="/download/CCM.rar">click to download</a></p>
+<h2 id="Recent-results-for-the-project-of-City-County-Merger"><a href="#Recent-results-for-the-project-of-City-County-Merger" class="headerlink" title="Recent results for the project of City-County Merger"></a>Recent results for the project of City-County Merger</h2><h3 id="Firm-Level"><a href="#Firm-Level" class="headerlink" title="Firm Level"></a>Firm Level</h3><p>You can replicate this part using the firm level code in the zipfile.</p>
+<h4 id="Main-Regression"><a href="#Main-Regression" class="headerlink" title="Main Regression"></a>Main Regression</h4><p>Below is the main regression result:</p>
+<p><img src="/images/Main.png" alt="pic"></p>
+<p>We can see that in the firm level, there is a negative relation between reform and pollution emission.</p>
+<h4 id="Event-Study"><a href="#Event-Study" class="headerlink" title="Event Study"></a>Event Study</h4><p>The picture below depicts how the reform’s effect varies before the reform year and after the reform year.</p>
+<p><img src="/images/Eventstudy.png" alt="pic"></p>
+<h3 id="County-Level"><a href="#County-Level" class="headerlink" title="County Level"></a>County Level</h3><p>Due to the pollution dataset’s quality problem, we decided to use the county-level pollution emission<br>to study the effect of the reform. You can replicate this part using the select_control code in the<br>zipfile.</p>
+<h4 id="County-Level-1-—-Use-firm-level-pollution-to-get-the-county-level-aggregate-pollution"><a href="#County-Level-1-—-Use-firm-level-pollution-to-get-the-county-level-aggregate-pollution" class="headerlink" title="County-Level 1 — Use firm level pollution to get the county level aggregate pollution."></a>County-Level 1 — Use firm level pollution to get the county level aggregate pollution.</h4><p>We are still working on this.</p>
+<h4 id="County-Level-2-—-Use-the-satellite-data-PM25-to-proxy-the-county-level-pollution-level"><a href="#County-Level-2-—-Use-the-satellite-data-PM25-to-proxy-the-county-level-pollution-level" class="headerlink" title="County-Level 2 — Use the satellite data PM25 to proxy the county level pollution level."></a>County-Level 2 — Use the satellite data PM25 to proxy the county level pollution level.</h4><h5 id="Main-Regression-1"><a href="#Main-Regression-1" class="headerlink" title="Main Regression"></a>Main Regression</h5><p>Below is the main regression result in county level:</p>
+<p><img src="/images/Main1.png" alt="pic"></p>
+<h5 id="Latest-tool-to-implement-stagger-DID-fect-Yiqing-Xu"><a href="#Latest-tool-to-implement-stagger-DID-fect-Yiqing-Xu" class="headerlink" title="Latest tool to implement stagger DID, fect(Yiqing Xu)"></a>Latest tool to implement stagger DID, fect(Yiqing Xu)</h5><h6 id="Use-method-“ife”"><a href="#Use-method-“ife”" class="headerlink" title="Use method “ife”:"></a>Use method “ife”:</h6><p>fect pm25_per_light,treat(reform) unit(dist_code) time(year) method(“ife”)</p>
+<p><img src="/images/Figure_Main.png" alt="pic"></p>
+<h6 id="placebo-test"><a href="#placebo-test" class="headerlink" title="placebo test"></a>placebo test</h6><p>fect pm25_per_light, treat(reform) unit(dist_code) time(year) method(“ife”) se r(2) placeboTest</p>
+<p><img src="/images/placebo.png" alt="pic"></p>
+<h6 id="wald-test"><a href="#wald-test" class="headerlink" title="wald test"></a>wald test</h6><p>fect pm25_per_light, treat(reform) unit(dist_code) time(year) method(“ife”) se r(2) preperiod(-14) offperiod(5) wald nboots(100)</p>
+<p><img src="/images/WaldTest.png" alt="pic"></p>
+<h6 id="equitest"><a href="#equitest" class="headerlink" title="equitest"></a>equitest</h6><p>fect pm25_per_light, treat(reform) unit(dist_code) time(year) method(“ife”) se r(2) preperiod(-14) offperiod(5) equiTest</p>
+<p><img src="/images/equiv.png" alt="pic"></p>
+<p>For what the tests above mean, please refer <a target="_blank" rel="noopener" href="https://yiqingxu.org/packages/fect/stata/fect_md.html">Yiqing Xu</a></p>
+
+        </div>
+        <footer>
+            <p class="meta">
+                <span class="byline author vcard">Posted by <span class="fn">Junhao Kong</span></span>
+                <time datetime="2022-07-11T01:31:14.000Z" data-updated="true">Mon Jul 11 2022</time>
+                
+            </p>
+            <div class="sharing">
+    
+        <a class="twitter-share-button"
+           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Project%20City-County%20Merger">
+            Tweet
+        </a>
+    
+</div>
+
+            <p class="meta">
+                
+                <a class="basic-alignment left" href="/" title="Previous Post: Spatial Structural Model">« Spatial Structural Model</a>
+                
+
+                
+            </p>
+        </footer>
+    </article>
+
+    
+
+</div>
+
+<aside class="sidebar">
+    <section class="odd">
+    <h1>Recent Posts</h1>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/07/12/soe-vs-nonsoe/">soe-vs-nonsoe</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/07/11/Spatial-Structural-Model-N-locations-and-K-industries/">Spatial Structural Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/07/11/City-County%20Merger/">Project City-County Merger</a></li></ul>
+</section><section class="even">
+    <h1>GitHub Repos</h1>
+    <ul id="gh_repos">
+        <li class="loading">Status updating&#8230;</li>
+    </ul>
+
+    <a target="_blank" rel="noopener" href="https://github.com/your_github">@your_github</a> on GitHub
+
+    <script>
+        $(document).ready(function(){
+            const options = {
+                user: 'your_github',
+                count: 0,
+                skip_forks: true,
+                target: '#gh_repos'
+            }
+
+            function escapeHtml(str) {
+                return $('<div/>').text(str).html();
+            }
+
+            function render(target, repos){
+                let i, fragment = '', t = $(target)[0];
+
+                for(i = 0; i < repos.length; i++) {
+                    fragment += '<li><a href="'+repos[i].html_url+'">'+repos[i].name+'</a><p>'+escapeHtml(repos[i].description||'')+'</p></li>';
+                }
+                t.innerHTML = fragment;
+            }
+
+            $.ajax({
+                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
+                dataType: 'jsonp',
+                error: function (err) {
+                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
+                },
+                success: function(data) {
+                    var repos = [];
+                    if (!data || !data.data) { return; }
+                    for (var i = 0; i < data.data.length; i++) {
+                        if (options.skip_forks && data.data[i].fork) { continue; }
+                        repos.push(data.data[i]);
+                    }
+                    if (options.count) { repos.splice(options.count); }
+                    render(options.target, repos);
+                }
+            });
+        });
+    </script>
+</section>
+</aside>
+
+    </div>
+</div>
+
+<footer role="contentinfo">
+    <p>
+        Copyright © 2022 - Junhao Kong -
+        <span class="credit">Generated using <a target="_blank" rel="noopener" href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme</a> for <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></span>
+    </p>
+</footer>
+
+
+
+</body>
+</html>
