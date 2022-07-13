@@ -6,7 +6,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
 <head>
     <meta charset="UTF-8">
-    <title>Calculate Geographic Around Method</title>
+    <title>News Sentiment and the Risk of a Stock Price Crash Risk</title><meta name="robots" content="noindex">
 
     <meta name="author" content="Junhao Kong">
 
@@ -16,7 +16,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
-    <link rel="canonical" href="http://JHKong.com/2022/07/12/Calculate-Geographic-Around-Method/">
+    <link rel="canonical" href="http://JHKong.com/2022/07/13/spc/">
 
     
         <link rel="alternate" href="/atom.xml" type="application/atom+xml">
@@ -113,31 +113,23 @@
         <div>
     <article class="hentry" role="article">
         <header>
-            <h1 class="entry-title">Calculate Geographic Around Method</h1>
+            <h1 class="entry-title">News Sentiment and the Risk of a Stock Price Crash Risk</h1>
             <p class="meta">
-                <time datetime="2022-07-12T14:28:29.000Z" data-updated="true">Tue Jul 12 2022</time>
+                <time datetime="2022-07-13T01:22:04.000Z" data-updated="true">Wed Jul 13 2022</time>
             </p>
         </header>
         <div class="entry-content">
-            <p>I derived a quick method to calculate the number of points around one specific point in Matlab code.</p>
-<p>Sometimes we want to know how many subway stations or hosipital around one specific point which is defined with latitude and longitutde.<br>I derived a method to fully utilize the Matlab’s matrix features which replace circles of some radius with a rectangle.</p>
-<p>For example, traditionally we do this use the process below:</p>
-<p><img src="/images/circle.jpg" alt="pic"></p>
-<p>My method proceed like this:</p>
-<p><img src="/images/rectangle.png" alt="pic"></p>
-<p>The tradeoff of my method is not traditionally “circle” neighbor area, but this kind of form makes the calculation improve a lot.</p>
-<p>The intuition here is that I do not calculate points number in the circle area but a recrangle area. You can just compare the latitude and longitude respectively to<br>confirm that whether in both direction the distance is short that the determined “radius”, and all you need to do is keeping points that satisfy the requrement above,<br>count how many observations there are.</p>
-<p>I provide a template code here for you to impletment this method.<br><a href="/download/qkm.m">code</a><br><a href="/download/sample.mat">dataset</a></p>
-
+            <p>This study combines a financial knowledge dictionary and pretraining method based on BERT (Bidirectional Encoder Representation from Transformers) to construct a deep learning model for identifying stock news sentiment. The study then calculates the sentiment metrics of all stocks and analyzes the impact of news sentiment on the risk of a stock price crash and its heterogeneity. The results show that stocks with more positive sentiment metrics have a higher risk of crash in the following year. We also investigate the information intermediation and investor sentiment channels by which news sentiment affects the risk of a crash. The results show that more net insider sales, lower information transparency, and less analyst coverage amplify the impact of news sentiment on future crash risk, which is consistent with the information intermediation channel. Additionally, more retail investor positions, more active investor sentiment, and divergence between analysts’ opinions and news amplify the impact of news sentiment on the risk of a future stock price crash, consistent with the investor sentiment channel.</p>
+<!-- flag of hidden posts -->
         </div>
         <footer>
             <p class="meta">
                 <span class="byline author vcard">Posted by <span class="fn">Junhao Kong</span></span>
-                <time datetime="2022-07-12T14:28:29.000Z" data-updated="true">Tue Jul 12 2022</time>
+                <time datetime="2022-07-13T01:22:04.000Z" data-updated="true">Wed Jul 13 2022</time>
                 
     <span class="categories">
     
-        <a class="category" href="/tags/Share-outside/">Share outside</a>
+        <a class="category" href="/tags/Private-project/">Private project</a>
     
     </span>
 
@@ -145,7 +137,7 @@
             <div class="sharing">
     
         <a class="twitter-share-button"
-           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Calculate%20Geographic%20Around%20Method">
+           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=News%20Sentiment%20and%20the%20Risk%20of%20a%20Stock%20Price%20Crash%20Risk">
             Tweet
         </a>
     
@@ -154,8 +146,6 @@
             <p class="meta">
                 
 
-                
-                <a class="basic-alignment right" href="/" title="Previous Post: Spatial Structural Model">Spatial Structural Model »</a>
                 
             </p>
         </footer>
