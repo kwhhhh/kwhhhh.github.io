@@ -6,7 +6,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
 <head>
     <meta charset="UTF-8">
-    <title>soe-vs-nonsoe</title><meta name="robots" content="noindex">
+    <title>residuals in xtreg</title>
 
     <meta name="author" content="Junhao Kong">
 
@@ -16,7 +16,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
-    <link rel="canonical" href="http://JHKong.com/2022/07/12/soe-vs-nonsoe/">
+    <link rel="canonical" href="http://JHKong.com/2022/07/13/residuals-in-xtreg/">
 
     
         <link rel="alternate" href="/atom.xml" type="application/atom+xml">
@@ -113,35 +113,29 @@
         <div>
     <article class="hentry" role="article">
         <header>
-            <h1 class="entry-title">soe-vs-nonsoe</h1>
+            <h1 class="entry-title">residuals in xtreg</h1>
             <p class="meta">
-                <time datetime="2022-07-12T09:44:47.000Z" data-updated="true">Tue Jul 12 2022</time>
+                <time datetime="2022-07-13T12:09:36.000Z" data-updated="true">Wed Jul 13 2022</time>
             </p>
         </header>
         <div class="entry-content">
-            <p>This blog document the external monitor of state owned enterprises’ environmental consequences. Before review the regression results, you<br>can download the datasets that I used to replicate the results I present here.</p>
-<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bXNkLker_AyLbRAmGR1v0g?pwd=35u9">Extract code: 35u9</a></p>
-<h2 id="Graphic-Evidence"><a href="#Graphic-Evidence" class="headerlink" title="Graphic Evidence"></a>Graphic Evidence</h2><p><img src="/images/cod.png" alt="pic"></p>
-<p>X axis represents year and Y axis represents the logorithmn of the $SO_2$ emission divided by product value.</p>
-<p><img src="/images/SO2.png" alt="pic"></p>
-<p>X axis represents year and Y axis represents the logorithmn of the COD emission divided by product value.</p>
-<p>Two pictures above show that after the external monitoring from the government improve the pollution intensity of state-owned enterprises.</p>
-<p>In the above pics, I use the definition of <a target="_blank" rel="noopener" href="https://academic.oup.com/qje/article-abstract/135/4/2135/5860784?login=false">He, Wang and Zhang</a><br>about the heavy pollution industries.</p>
-<h2 id="Main-Regression"><a href="#Main-Regression" class="headerlink" title="Main Regression"></a>Main Regression</h2><p><img src="/images/svsn_Main.png" alt="pic"></p>
-<h2 id="Event-Study"><a href="#Event-Study" class="headerlink" title="Event Study"></a>Event Study</h2><p>fvset base 2002 year<br>reghdfe lncod2opt soenest##i.year ln_asset, a(frdmh year)</p>
-<p><img src="/images/svsn_Eventstudy.png" alt="pic"></p>
-<h2 id="Work-next"><a href="#Work-next" class="headerlink" title="Work next"></a>Work next</h2><p>Select another control group. (Firms was state owned but transformed to private owned)</p>
-<p>Heterogeneous analysis.</p>
-<!-- flag of hidden posts -->
+            <h2 id="Codes-First"><a href="#Codes-First" class="headerlink" title="Codes First"></a>Codes First</h2><p>When we implement regression using “reg”, the following code gives us the residuals:</p>
+<p>predict resid, res</p>
+<p>However, when we use “xtreg” with “fe”, we should use the following code instead to get the residuals,</p>
+<p>predict resid, e</p>
+<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>For the fix effect model, we have:</p>
+<p>$y_{i,t}&#x3D;\beta X_{i,t}+u_i+\epsilon_{i,t}$</p>
+<p>If we use the code “*, res”, we get $u_i+\epsilon_{i,t}$ rather than $\epsilon_{i,t}$.</p>
+
         </div>
         <footer>
             <p class="meta">
                 <span class="byline author vcard">Posted by <span class="fn">Junhao Kong</span></span>
-                <time datetime="2022-07-12T09:44:47.000Z" data-updated="true">Tue Jul 12 2022</time>
+                <time datetime="2022-07-13T12:09:36.000Z" data-updated="true">Wed Jul 13 2022</time>
                 
     <span class="categories">
     
-        <a class="category" href="/tags/Private-Project/">Private Project</a>
+        <a class="category" href="/tags/Share-outside/">Share outside</a>
     
     </span>
 
@@ -149,7 +143,7 @@
             <div class="sharing">
     
         <a class="twitter-share-button"
-           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=soe-vs-nonsoe">
+           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=residuals%20in%20xtreg">
             Tweet
         </a>
     
@@ -158,6 +152,8 @@
             <p class="meta">
                 
 
+                
+                <a class="basic-alignment right" href="/" title="Previous Post: websites always used">websites always used »</a>
                 
             </p>
         </footer>
