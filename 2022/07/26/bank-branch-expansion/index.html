@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" lang="zh-CN"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8" lang="zh-CN"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>bank branch expansion</title><meta name="robots" content="noindex">
+
+    <meta name="author" content="Junhao Kong">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+    <link rel="canonical" href="http://JHKong.com/2022/07/26/bank-branch-expansion/">
+
+    
+        <link rel="alternate" href="/atom.xml" type="application/atom+xml">
+    
+
+    
+
+    
+<script src="/js/modernizr-2.0.js"></script>
+
+
+    
+<script src="/js/jquery-1.9.1.js"></script>
+
+
+    
+    <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
+
+    
+    <link rel="me" href="https://twitter.com/your_twitter">
+    
+
+
+
+    
+<script src="/js/octo.js"></script>
+
+
+    
+<link rel="stylesheet" href="/css/octo.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css">
+
+    
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+
+<header role="banner">
+    <hgroup>
+        <h1><a href="/">Junhao Kong</a></h1>
+        
+    </hgroup>
+</header>
+
+<nav role="navigation">
+    
+        <ul class="subscription" data-subscription="rss">
+            <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+        </ul>
+    
+
+    <form action="https://google.com/search" method="get">
+        <fieldset role="search">
+            <input type="hidden" name="q" value="site:http://jhkong.com/">
+            <input class="search" type="text" name="q" results="0" placeholder="Search">
+        </fieldset>
+    </form>
+
+    <ul class="main-navigation">
+        
+            <li><a href="/">Home</a></li>
+        
+            <li><a href="/archives">Archives</a></li>
+        
+            <li><a href="/">Blog</a></li>
+        
+    </ul>
+</nav>
+
+
+<div id="main">
+    <div id="content">
+        <div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title">bank branch expansion</h1>
+            <p class="meta">
+                <time datetime="2022-07-26T02:26:31.000Z" data-updated="true">Tue Jul 26 2022</time>
+            </p>
+        </header>
+        <div class="entry-content">
+            <p>Recently I started a small project about the bank branch geographic expansion and the bank’s performance.</p>
+<p>Using $285$ banks in China (mostly nongshanghang or city bank), I find that when a bank has more branches outside the headcity of the bank, there is higehr risk of bank (measured by risk weighted asset divided by total asset), and higehr bad loan percentage, higher deposit divided by loan, and higher net asset.</p>
+<p>The results are robust when province#year effect and type of the bank#year effect are controlled. (Where province is the province of the bank’s headquarter is located)</p>
+<p><a href="/download/bankexpansion.rar">download data and codes here</a></p>
+<p>Main results are showed below:</p>
+<p>Main Variables Explanation:<br>$roa$: return to total asset<br>$car$: capital adequacy ratio<br>$profitability$: literal meaning<br>$inflation$: literal meaning<br>$lnboom$: banking industry condition<br>$lncnmpu$: uncertainty index of trade policy<br>$lncnexr$: uncertainty index of exchange rate and financial policy<br>$lnasset$ the logrithmn of the total asset</p>
+<h2 id="Risk-Side"><a href="#Risk-Side" class="headerlink" title="Risk Side"></a>Risk Side</h2><h3 id="Bad-Loan-Percentage"><a href="#Bad-Loan-Percentage" class="headerlink" title="Bad Loan Percentage"></a>Bad Loan Percentage</h3><p><img src="/images/bandloan.png" alt="pic"><br>$badloanpc$: The percentage of bad loan</p>
+<h3 id="Risk-Asset-Weighted-Asset-Percentage"><a href="#Risk-Asset-Weighted-Asset-Percentage" class="headerlink" title="Risk Asset Weighted Asset Percentage"></a>Risk Asset Weighted Asset Percentage</h3><p><img src="/images/riskweightedasset.jpg" alt="pic"><br>$rwar$: The percentage of risk weighted asset (divided by total asset)</p>
+<h2 id="Scale-Effect"><a href="#Scale-Effect" class="headerlink" title="Scale Effect"></a>Scale Effect</h2><h3 id="Deposit-to-Loan"><a href="#Deposit-to-Loan" class="headerlink" title="Deposit to Loan"></a>Deposit to Loan</h3><p><img src="/images/d2l.jpg" alt="pic"><br>$deposit2loan$: “cundaibi”, deposit divided by loan</p>
+<h3 id="Net-Asset"><a href="#Net-Asset" class="headerlink" title="Net Asset"></a>Net Asset</h3><p><img src="/images/netasset.jpg" alt="pic"><br>$netasset$: Total Asset minus total debt</p>
+<h2 id="Operation-Status"><a href="#Operation-Status" class="headerlink" title="Operation Status"></a>Operation Status</h2><p><img src="/images/effic.jpg" alt="pic"><br>$efficiency$: Cost divided by Income</p>
+<!-- flag of hidden posts -->
+        </div>
+        <footer>
+            <p class="meta">
+                <span class="byline author vcard">Posted by <span class="fn">Junhao Kong</span></span>
+                <time datetime="2022-07-26T02:26:31.000Z" data-updated="true">Tue Jul 26 2022</time>
+                
+            </p>
+            <div class="sharing">
+    
+        <a class="twitter-share-button"
+           target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=bank%20branch%20expansion">
+            Tweet
+        </a>
+    
+</div>
+
+            <p class="meta">
+                
+
+                
+            </p>
+        </footer>
+    </article>
+
+    
+
+</div>
+
+<aside class="sidebar">
+    <section class="odd">
+    <h1>Recent Posts</h1>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/07/13/residuals-in-xtreg/">residuals in xtreg</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/07/13/websites-always-used/">websites always used</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/07/12/Calculate-Geographic-Around-Method/">Calculate Geographic Around Method</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/07/11/Spatial-Structural-Model-N-locations-and-K-industries/">Spatial Structural Model</a></li></ul>
+</section><section class="even">
+    <h1>GitHub Repos</h1>
+    <ul id="gh_repos">
+        <li class="loading">Status updating&#8230;</li>
+    </ul>
+
+    <a target="_blank" rel="noopener" href="https://github.com/your_github">@your_github</a> on GitHub
+
+    <script>
+        $(document).ready(function(){
+            const options = {
+                user: 'your_github',
+                count: 0,
+                skip_forks: true,
+                target: '#gh_repos'
+            }
+
+            function escapeHtml(str) {
+                return $('<div/>').text(str).html();
+            }
+
+            function render(target, repos){
+                let i, fragment = '', t = $(target)[0];
+
+                for(i = 0; i < repos.length; i++) {
+                    fragment += '<li><a href="'+repos[i].html_url+'">'+repos[i].name+'</a><p>'+escapeHtml(repos[i].description||'')+'</p></li>';
+                }
+                t.innerHTML = fragment;
+            }
+
+            $.ajax({
+                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
+                dataType: 'jsonp',
+                error: function (err) {
+                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
+                },
+                success: function(data) {
+                    var repos = [];
+                    if (!data || !data.data) { return; }
+                    for (var i = 0; i < data.data.length; i++) {
+                        if (options.skip_forks && data.data[i].fork) { continue; }
+                        repos.push(data.data[i]);
+                    }
+                    if (options.count) { repos.splice(options.count); }
+                    render(options.target, repos);
+                }
+            });
+        });
+    </script>
+</section>
+</aside>
+
+    </div>
+</div>
+
+<footer role="contentinfo">
+    <p>
+        Copyright © 2022 - Junhao Kong -
+        <span class="credit">Generated using <a target="_blank" rel="noopener" href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme</a> for <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></span>
+    </p>
+</footer>
+
+
+
+</body>
+</html>
